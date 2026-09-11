@@ -26,13 +26,13 @@ while True:
         uclar = [8, 12, 16, 20]
         eklemler = [6, 10, 14, 18]
 
-        open_leg = 0
+        open_finger = 0
 
         for uc, eklem in zip(uclar, eklemler):
             if hand.landmark[uc].y < hand.landmark[eklem].y:
-                open_leg += 1
+                open_finger += 1
 
-        if open_leg == 4:
+        if open_finger == 4:
             HandOpen = True
         if HandOpen:
 
