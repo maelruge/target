@@ -2,6 +2,14 @@ import tkinter as tk
 import cv2
 import mediapipe as mp
 
+mp_hands = mp.solutions.hands
+hands = mp_hands.Hands(max_num_hands=2, min_detection_confidence=0.7)
+
+camera = cv2.VideoCapture(0)
+
+uclar = [8, 12, 16, 20]
+eklemler = [6, 10, 14, 18]
+
 root = tk.Tk()
 
 screen_width = root.winfo_screenwidth()
@@ -11,19 +19,9 @@ screen_height = root.winfo_screenheight()
 x_merkez = (screen_width - 900) // 2
 y_merkez = ((screen_height - 480) // 2) - 150
 
-mp_hands = mp.solutions.hands
-hands = mp_hands.Hands(max_num_hands=2, min_detection_confidence=0.7)
-
-
-camera = cv2.VideoCapture(0)
-
 cv2.namedWindow("Camera")
 cv2.moveWindow("Camera", x_merkez, y_merkez)
 
-uclar = [8, 12, 16, 20]
-eklemler = [6, 10, 14, 18]
-
-root = tk.Tk()
 root.title("enter")
 root.geometry("350x180+655+440")
 
