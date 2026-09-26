@@ -1,1 +1,1 @@
-this project is sensing hand and it is showing picture of ilkkan this is my learning project
+this project checks if you raise your hand and you don't raise your hand it shoots you
